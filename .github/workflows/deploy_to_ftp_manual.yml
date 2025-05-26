@@ -1,0 +1,26 @@
+name: Deploy to FTP (Manual)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Remove existing files using curl
+        run: |
+          curl -k --ftp-ssl --user ${{ secrets.FTP_ACCOUNT }}:${{ secrets.FTP_PASSWORD }} -Q "DELE tlcalc/*" ftp://${{ secrets.FTP_SERVER }}
+
+      - name: Deploy to FTP server (FTP over TLS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_ACCOUNT }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./
+          server-dir: tlcalc/
