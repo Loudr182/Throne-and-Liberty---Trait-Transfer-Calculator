@@ -1,10 +1,11 @@
 import React from "react";
 import T1Item from "./T1Item";
+import { Grid } from '@mui/material';
 
 const T1ItemsSection = ({ items, onItemChange, translations }) => (
-  <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8">
+  <Grid container spacing={3} justifyContent="center">
     {items.map((item, i) => (
-      <div className="w-full" key={i}>
+      <Grid item xs={12} sm={6} md={3} lg={3} xl={3} key={i} display="flex" justifyContent="center">
         <T1Item
           index={i}
           traits={item.traits}
@@ -14,9 +15,9 @@ const T1ItemsSection = ({ items, onItemChange, translations }) => (
           translations={translations}
           isFirst={i === 0}
         />
-      </div>
+      </Grid>
     ))}
-  </div>
+  </Grid>
 );
 
 export default T1ItemsSection;

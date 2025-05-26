@@ -17,8 +17,7 @@ const T2_TOTAL_BLESSING = 9900;
 
 const LANGUAGES = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'cz', name: 'Czech', flag: '🇨🇿' },
-  { code: 'sk', name: 'Slovak', flag: '🇸🇰' }
+  { code: 'cz', name: 'Czech', flag: '🇨🇿' }
 ];
 
 function getDefaultT1Item(isFirst = false) {
@@ -180,16 +179,16 @@ function App() {
         <LanguageSelector language={language} setLanguage={setLanguage} languages={LANGUAGES} />
       </Box>
       <Box
-        width="80%" // use 80% of the page width
-        maxWidth={700}
+        width="100%"
+        maxWidth={1200}
         mx="auto"
         display="flex"
         flexDirection="column"
         alignItems="center"
         sx={{
-          bgcolor: 'transparent', // remove background
-          borderRadius: 0, // remove border radius
-          boxShadow: 'none', // remove shadow
+          bgcolor: 'transparent',
+          borderRadius: 0,
+          boxShadow: 'none',
           p: { xs: 2, sm: 4 },
           mt: 4
         }}
@@ -197,19 +196,20 @@ function App() {
         <Typography variant="h3" fontWeight={800} color="white" mb={2} align="center" sx={{ textShadow: '0 2px 16px #0008', letterSpacing: 1 }}>
           {translations.title || 'Trait Transfer Calculator'}
         </Typography>
-        <Box mb={2} width="100%" maxWidth={700} mx="auto" textAlign="left">
+        <Box mb={2} width="100%" maxWidth={900} mx="auto" textAlign="left">
           <RulesSection translations={translations} />
         </Box>
         <Box width="100%" maxWidth={400} textAlign="center" mx="auto" mb={4}>
-          <FormControl fullWidth variant="outlined" sx={{ mb: 2 }}>
-            <InputLabel id="t1-items-label" sx={{ color: '#bfc9db' }}>{translations.numberOfT1Items || 'Number of T1 Items:'}</InputLabel>
+          <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 1, textAlign: 'center' }}>
+            {translations.numberOfT1Items || 'Number of T1 Items:'}
+          </Typography>
+          <FormControl variant="outlined" sx={{ minWidth: 200, maxWidth: 320, bgcolor: 'white', borderRadius: 2, boxShadow: 2 }} size="small">
             <Select
               labelId="t1-items-label"
               id="t1-items"
               value={t1Count}
-              label={translations.numberOfT1Items || 'Number of T1 Items:'}
               onChange={e => handleT1CountChange(Number(e.target.value))}
-              sx={{ color: 'white', '.MuiOutlinedInput-notchedOutline': { borderColor: '#334155' }, '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: '#38bdf8' } }}
+              sx={{ color: '#232e3d', fontWeight: 600 }}
             >
               {[...Array(8)].map((_, i) => (
                 <MenuItem key={i + 1} value={i + 1}>{i + 1}</MenuItem>
@@ -217,7 +217,7 @@ function App() {
             </Select>
           </FormControl>
         </Box>
-        <Box width="100%" maxWidth={700} mb={4} mx="auto">
+        <Box width="100%" maxWidth={1200} mb={4} mx="auto">
           <T1ItemsSection items={t1Items} onItemChange={handleT1ItemChange} translations={translations} />
         </Box>
         <TotalBlessingsDisplay total={totalBlessings} translations={translations} />
@@ -226,10 +226,15 @@ function App() {
             {translations.maxOutT1Traits || 'Max Out T1 Traits'}
           </Button>
         </Box>
-        <Box width="100%" maxWidth={500} mx="auto" mb={4}>
-          <T2ItemSection traits={t2Traits} onTraitChange={handleT2TraitChange} translations={translations} />
+        <Box width="100%" maxWidth={1200} mx="auto" mb={4}>
+          <T2ItemSection traits={t2Traits} onTraitChange={handleT2TraitChange} translations={translations}>
+            <T2BlessingStatus
+              remaining={t2UsedBlessings === 0 ? null : remainingBlessing}
+              sufficient={sufficient}
+              translations={translations}
+            />
+          </T2ItemSection>
           <Divider sx={{ my: 2, bgcolor: '#334155' }} />
-          <T2BlessingStatus remaining={t2UsedBlessings === 0 ? null : remainingBlessing} sufficient={sufficient} translations={translations} />
         </Box>
         <Box mt={2} color="#bfc9db" fontSize={14} textAlign="center" opacity={0.8}>
           &copy; {new Date().getFullYear()} Trait Transfer Calculator. All rights reserved.

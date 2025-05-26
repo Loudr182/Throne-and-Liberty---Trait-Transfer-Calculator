@@ -39,9 +39,14 @@ const T1Item = ({
         key={j}
         label={translations[`trait${j+1}`] || `Trait ${j+1}`}
         value={traits.levels[j]}
-        min={j === 0 ? 1 : 0}
+        min={j === 0 ? 0 : 0} // min is 0 for all, but logic below restricts first slider
         max={4}
-        onChange={val => onTraitChange(j, val)}
+        onChange={val => {
+          // Prevent reducing first slider below 1
+          if (j === 0 && val < 1) return;
+          onTraitChange(j, val);
+        }}
+        disabled={false}
       />
     ))}
     <Box mb={2} mt={2}>

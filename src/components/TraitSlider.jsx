@@ -18,7 +18,7 @@ const TraitSlider = ({ label, value, min, max, onChange, disabled }) => (
     >
       <ArrowBackIosNewIcon fontSize="small" />
     </IconButton>
-    <Box flex={1} mx={1} position="relative" height={10} display="flex" alignItems="center">
+    <Box flex={1} mx={1} position="relative" height={10} display="flex" alignItems="center" minWidth={40} maxWidth={200}>
       <Box
         sx={{
           position: 'absolute',
