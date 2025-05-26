@@ -1,0 +1,19 @@
+{
+  "title": "Kalkulačka Přenosu Vlastností",
+  "blessingRules": "Pravidla přenosu požehnání jsou následující:",
+  "rules": [
+    "První T1 předmět přidává 240 požehnání za úroveň pro každý atribut. Měl by být maximalizován a přenesen jako poslední do T2 předmětu pro nejlepší efekt.",
+    "Všechny následující T1 předměty přidávají 120 požehnání za úroveň pro každý atribut.",
+    "Další požehnání lze ručně přidat ke každému T1 předmětu pomocí zadaného pole.",
+    "Celkové požehnání požadované pro T2 předmět je 9900. Ujistěte se, že požehnání z T1 předmětů je dostatečné k dosažení této hodnoty."
+  ],
+  "numberOfT1Items": "Počet T1 předmětů:",
+  "totalBlessings": "Celkové požehnání z T1 předmětů:",
+  "maxOutT1Traits": "Maximální úrovně T1 atributů",
+  "t2Item": "T2 Předmět",
+  "totalBlessingRequired": "Celkem požehnání požadováno: 9900",
+  "remainingBlessingRequired": "Zbývající požehnání požadováno:",
+  "maxTraitDisclaimer": "Tento předmět musí být maximálně vylepšen (ideálně všechny atributy) a přenesen jako poslední do T2 předmětu pro maximální efekt.",
+  "additionalBlessing": "Další požehnání:",
+  "languageLabel": "Jazyk:"
+}

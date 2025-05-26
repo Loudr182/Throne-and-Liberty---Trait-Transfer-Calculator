@@ -1,0 +1,19 @@
+{
+  "title": "Trait Transfer Calculator",
+  "blessingRules": "The blessing transfer rules are as follows:",
+  "rules": [
+    "The first T1 item adds 240 blessing per level for each trait. It should be maximized and transferred last into the T2 item for best effect.",
+    "All subsequent T1 items add 120 blessing per level for each trait.",
+    "Additional blessings can be manually added to each T1 item using the provided input field.",
+    "The total blessing required for the T2 item is 9900. Ensure the blessings from T1 items are sufficient to meet this requirement."
+  ],
+  "numberOfT1Items": "Number of T1 Items:",
+  "totalBlessings": "Total Blessings from T1 items:",
+  "maxOutT1Traits": "Max Out T1 Traits",
+  "t2Item": "T2 Item",
+  "totalBlessingRequired": "Total Blessing Required: 9900",
+  "remainingBlessingRequired": "Remaining Blessing Required:",
+  "maxTraitDisclaimer": "This item needs to be max traited (full trait ideally) and transferred last into the T2 item to maximize the effect.",
+  "additionalBlessing": "Additional Blessing:",
+  "languageLabel": "Language:"
+}
