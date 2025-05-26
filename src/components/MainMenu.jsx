@@ -1,6 +1,4 @@
 import React from 'react';
-import T1T2Img from '../assets/images/T1-T2.png';
-import T2T3Img from '../assets/images/T2-T3.png';
 import { Box, Typography, Grid, Card, CardActionArea, CardMedia, CardContent } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 
@@ -72,7 +70,7 @@ export default function MainMenu() {
               <CardMedia
                 component="img"
                 height="288"
-                image={T1T2Img}
+                image="/assets/images/T1-T2.png"
                 alt="Tier 1 to Tier 2"
                 sx={{ objectFit: 'cover', bgcolor: '#232e3d' }}
               />
@@ -105,7 +103,7 @@ export default function MainMenu() {
             <CardMedia
               component="img"
               height="288"
-              image={T2T3Img}
+              image="/assets/images/T2-T3.png"
               alt="Tier 2 to Tier 3 (Coming Soon)"
               sx={{
                 objectFit: 'cover',

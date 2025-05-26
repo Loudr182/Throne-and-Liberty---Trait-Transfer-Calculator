@@ -1,4 +1,4 @@
-# Trait Transfer Calculator (React + Vite)
+# Trait Transfer Calculator (React + Vite + Material UI)
 
 A web-based calculator for planning and simulating the transfer of traits between item tiers in a game. The application currently supports the Tier 1 → Tier 2 process, with a future placeholder for Tier 2 → Tier 3.
 
@@ -13,20 +13,20 @@ A web-based calculator for planning and simulating the transfer of traits betwee
   - "Max Out T1 Traits" button for quick max configuration.
 
 - **Language Support:**
-  - English, Czech, and Slovak translations.
+  - English and Czech translations.
   - Language selector updates all UI and rules dynamically.
 
 - **Responsive Design:**
-  - Mobile-friendly layout using Tailwind CSS and custom styles.
+  - Mobile-friendly layout using Material UI and custom styles.
 
 - **Main Menu:**
   - The main `index.html` page shows two images: T1→T2 (links to calculator) and T2→T3 (coming soon).
 
 ## Technical Implementation
 
-- **React + Vite + Tailwind CSS:**
+- **React + Vite + Material UI:**
   - All UI and state management use React functional components and hooks.
-  - Uses [Tailwind CSS](https://tailwindcss.com/) via CDN for styling.
+  - Uses [Material UI](https://mui.com/) for styling and layout.
   - Custom responsive tweaks in `index.css` and `App.css`.
 
 - **Translations:**
@@ -35,14 +35,16 @@ A web-based calculator for planning and simulating the transfer of traits betwee
 
 - **Deployment:**
   - Deployable as a static site to any web server.
-  - Includes a GitHub Actions workflow for FTPS deployment (see `.github/workflows/deploy-ftp.yml`).
+  - Multi-page support: `index.html` (main menu) and `T1-T2.html` (calculator).
 
 ## File Structure
 
 - `index.html` — Main menu page with links to calculators.
+- `T1-T2.html` — Calculator page.
 - `src/App.jsx` — Main React app logic and state.
 - `src/components/` — All React UI components.
-- `public/assets/images/` — Contains T1-T2.png and T2-T3.png for menu.
+- `public/assets/images/` — Contains favicon and static images.
+- `src/assets/images/` — Images imported in React components.
 - `public/assets/translations/` — Language JSON files.
 - `src/index.css`, `src/App.css` — Custom responsive styles.
 
@@ -55,7 +57,7 @@ A web-based calculator for planning and simulating the transfer of traits betwee
 
 ## Development Notes
 
-- No dependencies or build tools are required beyond React, Vite, and Tailwind CSS.
+- No Tailwind CSS or PostCSS dependencies are used; all styling is via Material UI and custom CSS.
 - All logic is in the React components; you can edit and deploy directly.
 - To add new languages, copy a translation file in `public/assets/translations/` and update the language selector logic.
 
