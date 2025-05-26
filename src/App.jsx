@@ -203,7 +203,7 @@ function App() {
           <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700, mb: 1, textAlign: 'center' }}>
             {translations.numberOfT1Items || 'Number of T1 Items:'}
           </Typography>
-          <FormControl variant="outlined" sx={{ minWidth: 200, maxWidth: 320, bgcolor: 'white', borderRadius: 2, boxShadow: 2 }} size="small">
+          <FormControl variant="outlined" sx={{ minWidth: 100, maxWidth: 150, bgcolor: 'white', borderRadius: 2, boxShadow: 2 }} size="small">
             <Select
               labelId="t1-items-label"
               id="t1-items"

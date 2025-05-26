@@ -6,7 +6,7 @@ const T2ItemSection = ({ traits, onTraitChange, translations, children }) => (
   <Box
     id="t2-item-container"
     width="100%"
-    maxWidth={1200}
+    maxWidth={400}
     mx="auto"
     bgcolor="#232e3d"
     color="white"
