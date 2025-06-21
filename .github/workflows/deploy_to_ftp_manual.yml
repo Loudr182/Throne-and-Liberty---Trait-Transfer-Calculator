@@ -19,7 +19,6 @@ jobs:
       - name: Deploy to FTP server (FTP over TLS)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          debug: true
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_ACCOUNT }}
           password: ${{ secrets.FTP_PASSWORD }}
