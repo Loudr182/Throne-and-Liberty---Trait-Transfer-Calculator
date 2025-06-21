@@ -7,7 +7,50 @@
     <title>T&L Trait Calculator</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <h1>Trait Transfer Calculator</h1>
+    </div>
+    <style>
+      /* Prevent image cropping in MainMenu */
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+      }
+      .main-menu-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+        box-sizing: border-box;
+      }
+      .main-menu-section {
+        padding: 1.5rem 1rem 2.5rem 1rem;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      @media (max-width: 600px) {
+        .main-menu-section {
+          padding: 1rem 0.25rem 2.5rem 0.25rem;
+        }
+      }
+      h1 {
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 800;
+        text-align: center;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 2px 16px #0008;
+        letter-spacing: 1px;
+      }
+    </style>
     <script type="module" src="/src/main-menu.jsx"></script>
   </body>
 </html>

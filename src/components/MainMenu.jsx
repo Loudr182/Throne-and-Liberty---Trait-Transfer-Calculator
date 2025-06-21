@@ -48,13 +48,13 @@ export default function MainMenu() {
         spacing={4}
         justifyContent="center"
         alignItems="center"
-        sx={{ maxWidth: 900 }}
+        sx={{ maxWidth: 900, margin: '0 auto', px: { xs: 2, sm: 0 } }} // Add horizontal padding on mobile
       >
         {/* T1 to T2 Calculator */}
-        <Grid item>
+        <Grid item xs={12} sm={6} md={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              width: 320,
+              width: 430,
               borderRadius: 4,
               boxShadow: 8,
               bgcolor: '#1e2633',
@@ -69,7 +69,7 @@ export default function MainMenu() {
             <CardActionArea href="T1-T2.html">
               <CardMedia
                 component="img"
-                height="288"
+                height="420"
                 image="/assets/images/T1-T2.png"
                 alt="Tier 1 to Tier 2"
                 sx={{ objectFit: 'cover', bgcolor: '#232e3d' }}
@@ -88,10 +88,10 @@ export default function MainMenu() {
           </Card>
         </Grid>
         {/* T2 to T3 (Coming Soon) */}
-        <Grid item>
+        <Grid item xs={12} sm={6} md={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              width: 320,
+              width: 430,
               borderRadius: 4,
               boxShadow: 8,
               bgcolor: '#1e2633',
@@ -102,7 +102,7 @@ export default function MainMenu() {
           >
             <CardMedia
               component="img"
-              height="288"
+              height="420"
               image="/assets/images/T2-T3.png"
               alt="Tier 2 to Tier 3 (Coming Soon)"
               sx={{
